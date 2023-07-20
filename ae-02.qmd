@@ -1,0 +1,51 @@
+---
+title: "Comparing geoms"
+format: html
+editor: visual
+---
+
+# Setup
+
+-   Load packages:
+
+```{r}
+#| label: load-packages
+
+library(tidyverse)
+library(openintro)
+```
+
+-   Prep data:
+
+```{r}
+#| label: mean-area-decade
+
+duke_forest <- tucsonHousing %>%
+  mutate(
+    decade_built = (year_built %/% 10) * 10,
+    decade_built_cat = case_when(
+      decade_built <= 1950 ~ "1950 or before",
+      decade_built >= 2000 ~ "2000 or after",
+      TRUE ~ as.character(decade_built)
+    )
+  )
+
+mean_area_decade <- tucsonHousing |>
+  group_by(decade_built_cat) |>
+  summarise(mean_area = mean(area))
+
+mean_area_decade
+```
+
+# Histogram
+
+Create a histogram of a continuous variable of your choice using geom_histogram(). Remember to set an appropriate binwidth. Describe the distribution that you see.
+
+# Frequency polygon
+
+Now create a frequency polygon of the same variable using geom_freqpoly(), but this time separate the data by a categorical variable. What differences do you notice when you compare groups?
+
+# Scatter plot with smoothed line of best fit
+
+Generate a scatterplot using geom_point() with two continuous variables from your dataset. Then use geom_smooth() to add a smoothed line of best fit to your scatterplot. How does this line help you understand the relationship between the two variables?
+
