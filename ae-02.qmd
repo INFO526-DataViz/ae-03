@@ -37,15 +37,31 @@ mean_area_decade <- tucsonHousing |>
 mean_area_decade
 ```
 
-# Histogram
+# PART I
+
+## Histogram
 
 Create a histogram of a continuous variable of your choice using geom_histogram(). Remember to set an appropriate binwidth. Describe the distribution that you see.
 
-# Frequency polygon
+## Frequency polygon
 
 Now create a frequency polygon of the same variable using geom_freqpoly(), but this time separate the data by a categorical variable. What differences do you notice when you compare groups?
 
-# Scatter plot with smoothed line of best fit
+## Scatter plot with smoothed line of best fit
 
 Generate a scatterplot using geom_point() with two continuous variables from your dataset. Then use geom_smooth() to add a smoothed line of best fit to your scatterplot. How does this line help you understand the relationship between the two variables?
+
+# PART II
+
+## 2D binning plot
+
+Use geom_bin2d() to create a 2D binning plot with two continuous variables from your dataset. What kind of patterns do you see?
+
+## Two variables
+
+Create three different plots using geom_point(), geom_jitter(), and geom_count() with one discrete variable and one continuous variable from your dataset. How are these plots different?
+
+## One time variable, one continuous variable
+
+Create a line plot (geom_line()), an area plot (geom_area()), and a step plot (geom_step()) with one time variable and one continuous variable from your dataset. Which plot do you prefer and why?
 
